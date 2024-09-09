@@ -1,0 +1,241 @@
+lokendra@lokendra-virtual-machine:~$ 
+lokendra@lokendra-virtual-machine:~$ pwd
+/home/lokendra
+lokendra@lokendra-virtual-machine:~$ 
+lokendra@lokendra-virtual-machine:~$ 
+lokendra@lokendra-virtual-machine:~$ cd D
+Desktop/   Documents/ Downloads/ 
+lokendra@lokendra-virtual-machine:~$ cd Documents/capston-1/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ ls -lrt
+total 240
+-rw------- 1 lokendra lokendra   412 Aug 10 09:07 s3versioning-playbook.yaml
+-rw-rw-r-- 1 lokendra lokendra 52712 Aug 10 16:06 cap1.txt
+-rw-rw-r-- 1 lokendra lokendra 80742 Aug 29 02:11 cap1_1.txt
+-rw------- 1 lokendra lokendra   446 Sep  3 10:18 iamons3.yaml
+-rw-rw-r-- 1 lokendra lokendra  1360 Sep  3 10:58 create_s3_bucket.yaml
+-rw-rw-r-- 1 lokendra lokendra    44 Sep  3 11:06 inventory
+-rw-rw-r-- 1 lokendra lokendra   591 Sep  3 11:59 create_s3_bucket1.yaml
+-rw-rw-r-- 1 lokendra lokendra   407 Sep  3 12:16 policy1.json
+-rw-rw-r-- 1 lokendra lokendra     0 Sep  3 12:37 {boto3_version:
+-rw-rw-r-- 1 lokendra lokendra  1517 Sep  3 12:55 create_iam_users.yaml
+-rw-rw-r-- 1 lokendra lokendra     0 Sep  3 13:14 1
+-rw-rw-r-- 1 lokendra lokendra   221 Sep  3 14:06 s3_ec2_admin.json
+-rw-rw-r-- 1 lokendra lokendra   179 Sep  3 14:12 iam_list_users.yaml
+-rw-rw-r-- 1 lokendra lokendra   384 Sep  3 14:25 iam_policy_attachment.yaml
+-rwxrwxr-x 1 lokendra lokendra   256 Sep  3 14:30 check_attached_policies.sh
+-rw-rw-r-- 1 lokendra lokendra   400 Sep  3 15:46 remove_managed_policy.yaml
+-rw-rw-r-- 1 lokendra lokendra   345 Sep  3 16:37 tagged_policy.yaml
+-rw-rw-r-- 1 lokendra lokendra   905 Sep  3 17:25 iam_user_group_management.yaml
+-rw-rw-r-- 1 lokendra lokendra  1333 Sep  3 17:42 assign_admin_role.yml
+-rw-rw-r-- 1 lokendra lokendra   273 Sep  3 18:21 s3_ec2_limited_access.json
+-rw-rw-r-- 1 lokendra lokendra   935 Sep  3 18:25 IAM_groups_users_without_initial_permissions.yaml
+-rw-rw-r-- 1 lokendra lokendra  1512 Sep  3 19:00 IAM_groups_users_without_with_tag.yaml
+-rw-rw-r-- 1 lokendra lokendra   533 Sep  3 19:12 admin_policy_assignment.yaml
+-rw-rw-r-- 1 lokendra lokendra  2058 Sep  3 19:54 admin_policy_assignment1.yaml
+-rw-rw-r-- 1 lokendra lokendra   605 Sep  3 20:09 iam_custom_policy_creation.yaml
+-rw-rw-r-- 1 lokendra lokendra   470 Sep  3 20:17 custom_policy_assignment.yaml
+-rw-rw-r-- 1 lokendra lokendra 16934 Sep  4 01:57 04092024_history
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ mkdir CAC
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp custom_policy_assignment.yaml CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp custom_policy_assignment.yaml CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp custom_policy_assignment.yaml CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ mv IAM_groups_users_without_with_tag.yaml IAM_groups_users_with_tag.yaml
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp IAM_groups_users_without_with_tag.yaml CAC/
+cp: cannot stat 'IAM_groups_users_without_with_tag.yaml': No such file or directory
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp IAM_groups_users_with_tag.yaml CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp s3_ec2_limited_access.json CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp s3_ec2_admin.json CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cd CAC
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ ls -lrt
+total 16
+-rw-rw-r-- 1 lokendra lokendra  470 Sep  4 02:01 custom_policy_assignment.yaml
+-rw-rw-r-- 1 lokendra lokendra 1512 Sep  4 02:01 IAM_groups_users_with_tag.yaml
+-rw-rw-r-- 1 lokendra lokendra  273 Sep  4 02:04 s3_ec2_limited_access.json
+-rw-rw-r-- 1 lokendra lokendra  221 Sep  4 02:05 s3_ec2_admin.json
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ cd ..
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp iam_custom_policy_creation.yaml CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cp admin_policy_assignment1.yaml CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1$ cd CAC/
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ ls -lrt
+total 24
+-rw-rw-r-- 1 lokendra lokendra  470 Sep  4 02:01 custom_policy_assignment.yaml
+-rw-rw-r-- 1 lokendra lokendra 1512 Sep  4 02:01 IAM_groups_users_with_tag.yaml
+-rw-rw-r-- 1 lokendra lokendra  273 Sep  4 02:04 s3_ec2_limited_access.json
+-rw-rw-r-- 1 lokendra lokendra  221 Sep  4 02:05 s3_ec2_admin.json
+-rw-rw-r-- 1 lokendra lokendra  605 Sep  4 02:06 iam_custom_policy_creation.yaml
+-rw-rw-r-- 1 lokendra lokendra 2058 Sep  4 02:06 admin_policy_assignment1.yaml
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ ls -lrt
+total 24
+-rw-rw-r-- 1 lokendra lokendra  470 Sep  4 02:01 4_iam_custom_policy_assignment.yaml
+-rw-rw-r-- 1 lokendra lokendra 1512 Sep  4 02:01 1_IAM_groups_users_with_tag.yaml
+-rw-rw-r-- 1 lokendra lokendra  273 Sep  4 02:04 s3_ec2_limited_access.json
+-rw-rw-r-- 1 lokendra lokendra  221 Sep  4 02:05 s3_ec2_admin.json
+-rw-rw-r-- 1 lokendra lokendra  605 Sep  4 02:06 3_iam_custom_policy_creation.yaml
+-rw-rw-r-- 1 lokendra lokendra 2058 Sep  4 02:06 2_admin_policy_create_assignment.yaml
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ ls
+1_IAM_groups_users_with_tag.yaml       3_iam_custom_policy_creation.yaml    s3_ec2_admin.json
+2_admin_policy_create_assignment.yaml  4_iam_custom_policy_assignment.yaml  s3_ec2_limited_access.json
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ script session.log
+Script started, output log file is 'session.log'.
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ ls -lrt
+total 24
+-rw-rw-r-- 1 lokendra lokendra  470 Sep  4 02:01 4_iam_custom_policy_assignment.yaml
+-rw-rw-r-- 1 lokendra lokendra 1512 Sep  4 02:01 1_IAM_groups_users_with_tag.yaml
+-rw-rw-r-- 1 lokendra lokendra  273 Sep  4 02:04 s3_ec2_limited_access.json
+-rw-rw-r-- 1 lokendra lokendra  221 Sep  4 02:05 s3_ec2_admin.json
+-rw-rw-r-- 1 lokendra lokendra  605 Sep  4 02:06 3_iam_custom_policy_creation.yaml
+-rw-rw-r-- 1 lokendra lokendra 2058 Sep  4 02:06 2_admin_policy_create_assignment.yaml
+-rw-rw-r-- 1 lokendra lokendra    0 Sep  4 02:12 session.log
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ mkdir aws_compliance_audit
+cd aws_compliance_audit
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ pwd
+/home/lokendra/Documents/capston-1/CAC/aws_compliance_audit
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ vi inventory
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ ls -lrt
+total 4
+-rw-rw-r-- 1 lokendra lokendra 44 Sep  4 02:15 inventory
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ vi compliance_audit.yaml
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ vi compliance_checking_script.py
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ ansible-playbook compliance_audit.yml -e "role_name=CustomAdminRole"
+ERROR! the playbook: compliance_audit.yml could not be found
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ ls -lrt
+total 12
+-rw-rw-r-- 1 lokendra lokendra   44 Sep  4 02:15 inventory
+-rw-rw-r-- 1 lokendra lokendra 1188 Sep  4 02:16 compliance_audit.yaml
+-rw-rw-r-- 1 lokendra lokendra  791 Sep  4 02:18 compliance_checking_script.py
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ ansible-playbook compliance_audit.yaml -e "role_name=CustomAdminRole"
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+[WARNING]: Could not match supplied host pattern, ignoring: local
+
+PLAY [AWS Compliance Auditing] ****************************************************************************************************************************************************
+skipping: no hosts matched
+
+PLAY RECAP ************************************************************************************************************************************************************************
+
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ ansible-playbook compliance_audit.yaml -e "role_name=CustomAdminRole"
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+PLAY [AWS Compliance Auditing] ****************************************************************************************************************************************************
+
+TASK [Check AWS Config status] ****************************************************************************************************************************************************
+changed: [localhost]
+
+TASK [Ensure AWS Config is enabled] ***********************************************************************************************************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "AWS Config is not enabled. Please enable AWS Config in the AWS Console."}
+
+PLAY RECAP ************************************************************************************************************************************************************************
+localhost                  : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ ansible-playbook compliance_audit.yaml -e "role_name=CustomAdminRole"
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+PLAY [AWS Compliance Auditing] ****************************************************************************************************************************************************
+
+TASK [Check AWS Config status] ****************************************************************************************************************************************************
+changed: [localhost]
+
+TASK [Ensure AWS Config is enabled] ***********************************************************************************************************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "AWS Config is not enabled. Please enable AWS Config in the AWS Console."}
+
+PLAY RECAP ************************************************************************************************************************************************************************
+localhost                  : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC/aws_compliance_audit$ 
+exit
+Script done.
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ ls -lrt
+total 80
+-rw-rw-r-- 1 lokendra lokendra   470 Sep  4 02:01 4_iam_custom_policy_assignment.yaml
+-rw-rw-r-- 1 lokendra lokendra  1512 Sep  4 02:01 1_IAM_groups_users_with_tag.yaml
+-rw-rw-r-- 1 lokendra lokendra   273 Sep  4 02:04 s3_ec2_limited_access.json
+-rw-rw-r-- 1 lokendra lokendra   221 Sep  4 02:05 s3_ec2_admin.json
+-rw-rw-r-- 1 lokendra lokendra   605 Sep  4 02:06 3_iam_custom_policy_creation.yaml
+-rw-rw-r-- 1 lokendra lokendra  2058 Sep  4 02:06 2_admin_policy_create_assignment.yaml
+drwxrwxr-x 2 lokendra lokendra  4096 Sep  4 02:22 aws_compliance_audit
+-rw-rw-r-- 1 lokendra lokendra 46473 Sep  4 02:26 session.log
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ vi session.log 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+lokendra@lokendra-virtual-machine:~/Documents/capston-1/CAC$ 
+

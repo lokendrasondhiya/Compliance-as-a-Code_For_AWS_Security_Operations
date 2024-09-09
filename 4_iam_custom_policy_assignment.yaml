@@ -1,0 +1,16 @@
+---
+- name: Attach custom IAM Policy to Users using AWS CLI
+  hosts: localhost
+  gather_facts: no
+  vars:
+    policy_name: "MyCustomPolicy"
+    account_id: "103397705298"
+    policy_arn: "arn:aws:iam::{{ account_id }}:policy/{{policy_name}}"
+    users:
+      - new_user1
+      - new_user2
+  tasks:
+    - name: Attach policy to users
+      command: >
+        aws iam attach-user-policy --user-name {{ item }} --policy-arn {{ policy_arn }}
+      with_items: "{{ users }}"

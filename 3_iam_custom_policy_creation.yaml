@@ -1,0 +1,26 @@
+---
+- name: Implement IAM Policy on AWS
+  hosts: localhost
+  gather_facts: no
+  collections:
+    - amazon.aws
+  vars:
+    policy_name: "MyCustomPolicy"
+    users:
+      - "User1"  # Replace with actual IAM usernames
+      - "User2"
+  tasks:
+    - name: Create or update IAM policy
+      iam_managed_policy:
+        state: present
+        name: "{{ policy_name }}"
+        policy: "{{ lookup('file', 's3_ec2_limited_access.json') }}"
+        description: "A custom IAM policy created with Ansible"
+      register: policy_result
+
+    - name: Output policy details
+      debug:
+        var: policy_result
+
+
+

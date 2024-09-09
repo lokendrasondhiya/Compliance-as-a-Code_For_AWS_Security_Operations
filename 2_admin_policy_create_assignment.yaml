@@ -1,0 +1,71 @@
+---
+- name: Create custom admin role and attach to users using AWS CLI
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  collections:
+    - community.aws
+
+  vars:
+    AWS_ACCOUNT_ID : "103397705298"
+    custom_admin_role_name: "CustomAdminRole"
+    custom_admin_policy_name: "s3_ec2_admin"
+    custom_admin_policy_document: |
+      {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:*",
+              "ec2:*",
+              "iam:PassRole"
+            ],
+            "Resource": "*"
+          }
+        ]
+      }
+    assume_role_policy_document: |
+      {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": { "AWS": "arn:aws:iam::{{ AWS_ACCOUNT_ID }}:root" },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      }
+    users:
+      - "user1"
+      - "user2"
+
+  tasks:
+    - name: Create custom admin policy
+      community.aws.iam_managed_policy:
+        name: "{{ custom_admin_policy_name }}"
+        policy: "{{ custom_admin_policy_document }}"
+        description: "Custom policy with administrative permissions"
+        state: present
+      register: custom_admin_policy_result
+
+    - name: Create custom admin role
+      community.aws.iam_role:
+        name: "{{ custom_admin_role_name }}"
+        assume_role_policy_document: "{{ assume_role_policy_document }}"
+        state: present
+        
+    - name: Create custom admin group
+      amazon.aws.iam_group:
+        name: CustomAdminRole
+        state: present  # Ensure the group is created
+
+    - name: Attach custom admin policy to the role using AWS CLI
+      command: >
+        aws iam attach-role-policy --role-name {{ custom_admin_role_name }} --policy-arn {{ custom_admin_policy_result.policy.arn }}
+
+    - name: Attach custom admin role to users using AWS CLI
+      command: >
+        aws iam add-user-to-group --group-name {{ custom_admin_role_name }} --user-name {{ item }}
+      loop: "{{ users }}"
+

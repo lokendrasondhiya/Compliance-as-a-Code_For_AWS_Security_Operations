@@ -1,0 +1,59 @@
+---
+- name: Create IAM groups, users, and assign tags
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  collections:
+    - community.aws
+
+  tasks:
+    - name: Create IAM groups
+      community.aws.iam_group:
+        name: "{{ item.group_name }}"
+        state: present
+      loop:
+        - { group_name: "development" }
+        - { group_name: "testing" }
+
+    - name: Create IAM users
+      community.aws.iam_user:
+        name: "{{ item.name }}"
+        state: present
+      loop:
+        - { name: "user1" }
+        - { name: "user2" }
+        - { name: "new_user1" }
+        - { name: "new_user2" }
+
+    - name: Add users to groups
+      community.aws.iam_group:
+        name: "{{ item.group }}"
+        users:
+          - "{{ item.user }}"
+        state: present
+      loop:
+        - { group: "development", user: "user1" }
+        - { group: "testing", user: "user2" }
+        - { group: "development", user: "new_user1" }
+        - { group: "testing", user: "new_user2" }
+
+    - name: Assign tags to user1 and user2
+      community.aws.iam_user:
+        name: "{{ item }}"
+        state: present
+        tags:
+          Role: "s3_ec2_admin"
+      loop:
+        - "user1"
+        - "user2"
+
+    - name: Assign tags to new_user1 and new_user2
+      community.aws.iam_user:
+        name: "{{ item.name }}"
+        state: present
+        tags:
+          Environment: "{{ item.tag }}"
+      loop:
+        - { name: "new_user1", tag: "development" }
+        - { name: "new_user2", tag: "testing" }
+
