@@ -1,0 +1,15 @@
+EC2: [
+"i-0dbc2ccaef35c0fa2", "i-0af334da8ba6fd55b"
+]
+S3: [
+"config-bucket-103397705298"
+]
+IAM_USER: [
+"new_user1", "new_user2", "user1", "user2"
+]
+IAM_ROLE: [
+"AWSServiceRoleForConfig", "AWSServiceRoleForSupport", "AWSServiceRoleForTrustedAdvisor", "CustomAdminRole"
+]
+EBS: [
+"vol-0a7303050db6e0db1", "vol-0ca4f2bf6dc0f8891"
+]

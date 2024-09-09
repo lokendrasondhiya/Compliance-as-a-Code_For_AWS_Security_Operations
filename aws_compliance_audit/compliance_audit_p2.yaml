@@ -1,0 +1,19 @@
+- name: AWS Compliance Auditing
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+    - name: Check AWS Config status
+      shell: aws configservice describe-configuration-recorder-status --output json
+      register: config_status
+
+    - name: Debug Config Status
+      debug:
+        var: config_status.stdout
+
+    - name: Ensure AWS Config is enabled
+      fail:
+        msg: "AWS Config is not enabled. Please enable AWS Config in the AWS Console."
+      when: "'recording' in config_status.stdout"
+
